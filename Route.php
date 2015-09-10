@@ -8,7 +8,7 @@ class Route{
 	
 	public static function init(){
  
-		$parsed_url = parse_url($_SERVER['REQUEST_URI']);//URI zerlegen
+		$parsed_url = parse_url($_SERVER['REQUEST_URI']);//Parse Uri
 		
 		if(isset($parsed_url['path'])){
 			self::$path = trim($parsed_url['path'],'/');
