@@ -5,7 +5,7 @@ include('Config.php');
 include('Route.php');
 
 //config
-Config::set('basepath','');
+Config::set('basepath','/api/v1');
 
 //init routing
 Route::init();
@@ -50,6 +50,16 @@ Route::add('/foo/bar/foo/bar',function(){
 Route::add('/(.*)/(.*)/(.*)/(.*)',function($var1,$var2,$var3,$var4){
 	//Do something
 	echo 'You have entered: '.$var1.' / '.$var2.' / '.$var3.' / '.$var4.'<br/>';
+});
+
+Route::add('/api/v1/deployment/(.*)',function($id){
+	//Do something
+	echo $id;
+});
+
+Route::add('/deployment/(.*)',function($id){
+	//Do something
+	echo $id;
 });
 
 //Add a 404 Not found Route

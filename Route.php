@@ -15,7 +15,7 @@ class Route{
 		}else{
 			self::$path = '/';
 		}
-        
+    
 	}
 	
 	public static function add($expression,$function){
@@ -41,11 +41,11 @@ class Route{
 			
 			if(Config::get('basepath')){
 				
-                //Add / if its not empty
-                if($route['expression']!=''){
-                    $route['expression'] = '/'.$route['expression'];
-                }
-                
+        //Add / if its not empty
+        if($route['expression']!=''){
+            $route['expression'] = '/'.$route['expression'];
+        }
+        
 				$route['expression'] = '('.Config::get('basepath').')'.$route['expression'];
 				
 			}
@@ -56,7 +56,7 @@ class Route{
 			//Add 'find string end' automatically
 			$route['expression'] = $route['expression'].'$';
             
-            //echo $route['expression'].'<br/>';
+      //echo $route['expression'].'<br/>';
             
 			//check match	
 			if(preg_match('#'.$route['expression'].'#',self::$path,$matches)){
