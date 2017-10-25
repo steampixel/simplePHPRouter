@@ -4,8 +4,12 @@
 include('Config.php');
 include('Route.php');
 
-//config
-Config::set('basepath','/api/v1');
+//configure basepath
+
+//If your script lives in the web root folder use a / , leave it empty or do not define this config
+Config::set('basepath','/');
+//If your script lives in a subfolder for example you can use the following example
+//Config::set('basepath','/api/v1');
 
 //init routing
 Route::init();
@@ -28,7 +32,10 @@ Route::add('/test.html',function(){
 	echo 'Hello from test.html';
 });
 
-//complex route with parameter
+//complex route with parameter 
+//be aware that (.*) will trigger on / too for example: /user/foo/bar/edit
+//also users could inject mysql-code if you use (.*)
+//you should better use a saver expression like /user/([0-9]*)/edit or /user/([A-Za-z]*)/edit
 Route::add('/user/(.*)/edit',function($id){
 	//Do something
 	echo 'Edit user with id '.$id.'<br/>';
@@ -50,16 +57,6 @@ Route::add('/foo/bar/foo/bar',function(){
 Route::add('/(.*)/(.*)/(.*)/(.*)',function($var1,$var2,$var3,$var4){
 	//Do something
 	echo 'You have entered: '.$var1.' / '.$var2.' / '.$var3.' / '.$var4.'<br/>';
-});
-
-Route::add('/api/v1/deployment/(.*)',function($id){
-	//Do something
-	echo $id;
-});
-
-Route::add('/deployment/(.*)',function($id){
-	//Do something
-	echo $id;
 });
 
 //Add a 404 Not found Route

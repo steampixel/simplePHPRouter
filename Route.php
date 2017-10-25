@@ -39,15 +39,9 @@ class Route{
 		
 		foreach(self::$routes as $route){
 			
-			if(Config::get('basepath')){
-				
-        //Add / if its not empty
-        if($route['expression']!=''){
-            $route['expression'] = '/'.$route['expression'];
-        }
-        
+      //Add basepath to matching string
+			if(Config::get('basepath')&&Config::get('basepath')!=''&&Config::get('basepath')!='/'){
 				$route['expression'] = '('.Config::get('basepath').')'.$route['expression'];
-				
 			}
 			
 			//Add 'find string start' automatically
@@ -55,15 +49,15 @@ class Route{
  
 			//Add 'find string end' automatically
 			$route['expression'] = $route['expression'].'$';
-            
+      
       //echo $route['expression'].'<br/>';
-            
+      
 			//check match	
 			if(preg_match('#'.$route['expression'].'#',self::$path,$matches)){
 
 				array_shift($matches);//Always remove first element. This contains the whole string
 				
-				if(Config::get('basepath')){
+				if(Config::get('basepath')&&Config::get('basepath')!=''&&Config::get('basepath')!='/'){
 					
 					array_shift($matches);//Remove Basepath
 					
