@@ -2,12 +2,15 @@
 
 class Route{
 	
-	public static $routes = Array();
-	public static $routes404 = Array();
-	public static $path;
+	private static $routes = Array();
+	private static $routes404 = Array();
+	private static $path;
+  private static $basepath = '/';
 	
-	public static function init(){
- 
+	public static function init($basepath = '/'){
+    
+    self::$basepath = $basepath;
+    
 		$parsed_url = parse_url($_SERVER['REQUEST_URI']);//Parse Uri
 
 		if(isset($parsed_url['path'])){
@@ -40,8 +43,8 @@ class Route{
 		foreach(self::$routes as $route){
 			
       // Add basepath to matching string
-			if(Config::get('basepath')&&Config::get('basepath')!=''&&Config::get('basepath')!='/'){
-				$route['expression'] = '('.Config::get('basepath').')'.$route['expression'];
+			if(self::$basepath!=''&&self::$basepath!='/'){
+				$route['expression'] = '('.self::$basepath.')'.$route['expression'];
 			}
 			
 			// Add 'find string start' automatically
@@ -57,7 +60,7 @@ class Route{
 
 				array_shift($matches);// Always remove first element. This contains the whole string
 				
-				if(Config::get('basepath')&&Config::get('basepath')!=''&&Config::get('basepath')!='/'){
+				if(self::$basepath!=''&&self::$basepath!='/'){
 					
 					array_shift($matches);// Remove Basepath
 					

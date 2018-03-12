@@ -1,18 +1,14 @@
 <?PHP
 
 // Include needed files
-include('Config.php');
 include('Route.php');
 
-// Configure basepath
+// Init routing and configure basepath
 // If your script lives in the web root folder use a / , leave it empty or do not define this config
-Config::set('basepath','/');
+Route::init('/');
 
 // If your script lives in a subfolder you can use the following example
-// Config::set('basepath','/api/v1');
-
-// Init routing
-Route::init();
+// Route::init('/api/v1');
 
 // Base route (startpage)
 Route::add('/',function(){
