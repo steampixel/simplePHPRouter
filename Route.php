@@ -39,27 +39,27 @@ class Route{
 		
 		foreach(self::$routes as $route){
 			
-      //Add basepath to matching string
+      // Add basepath to matching string
 			if(Config::get('basepath')&&Config::get('basepath')!=''&&Config::get('basepath')!='/'){
 				$route['expression'] = '('.Config::get('basepath').')'.$route['expression'];
 			}
 			
-			//Add 'find string start' automatically
+			// Add 'find string start' automatically
 			$route['expression'] = '^'.$route['expression'];
  
-			//Add 'find string end' automatically
+			// Add 'find string end' automatically
 			$route['expression'] = $route['expression'].'$';
       
       //echo $route['expression'].'<br/>';
       
-			//check match	
+			// Check match	
 			if(preg_match('#'.$route['expression'].'#',self::$path,$matches)){
 
-				array_shift($matches);//Always remove first element. This contains the whole string
+				array_shift($matches);// Always remove first element. This contains the whole string
 				
 				if(Config::get('basepath')&&Config::get('basepath')!=''&&Config::get('basepath')!='/'){
 					
-					array_shift($matches);//Remove Basepath
+					array_shift($matches);// Remove Basepath
 					
 				}
 					

@@ -1,7 +1,20 @@
-This is a simple example that shows a simple PHP routing system. 
-This is not for production use but for people who want to understand how such a system works.
-Take a look in the index.php file. You can use the Route::add method to add a new route to your project.
-The first argument takes the URL. 
-You can use Regexp in there to parse variables directly out of the URL und push them to the handler method.
-The handler is the second argument of the add method.
-Dont forget to set the basepath in index.php and .htaccess file.
+# Simple PHP Router
+
+Hey! This is a simple class that can handel the whole url routing for your project.
+
+It utilizes RegExp and PHPs anonymous functions to create a lightweight and fast routing system.
+
+Take a look in the index.php file. As you can see the ```Route::add()``` method is used to add new routes to your project.
+The first argument takes the path segment. You can also use RegExp in there to parse out variables. 
+All matches will be pushed to the handler method. The handler is the second argument of the add function.
+
+Example:
+```
+Route::add('/user/(.*)/edit',function($id){
+	//Do something
+	echo 'Edit user with id '.$id.'<br/>';
+});
+```
+
+## Something dows not work?
+Dont forget to set the basepath in your index.php and .htaccess file.
