@@ -53,7 +53,7 @@ class Route{
 			// Add 'find string end' automatically
 			$route['expression'] = $route['expression'].'$';
       
-      //echo $route['expression'].'<br/>';
+      // echo $route['expression'].'<br/>';
       
 			// Check match	
 			if(preg_match('#'.$route['expression'].'#',self::$path,$matches)){

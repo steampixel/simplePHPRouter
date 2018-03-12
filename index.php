@@ -67,3 +67,16 @@ Route::add404(function($url){
 
 // Check if any of the defined routes will match and execute them
 Route::run();
+
+?>
+
+<hr/>
+Navigation:
+<ul>
+  <li><a href="/">home</a></li>
+  <li><a href="/index.php">index.php</a></li>
+  <li><a href="/user/3/edit">edit user 3</a></li>
+  <li><a href="/foo/5/bar">foo 5 bar</a></li>
+  <li><a href="/foo/bar/foo/bar">long route example</a></li>
+  <li><a href="/test.html">test.html</a> (May not work with PHPs built in webserver. Try apache webserver.)</li>
+</ul>

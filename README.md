@@ -16,5 +16,12 @@ Route::add('/user/(.*)/edit',function($id){
 });
 ```
 
-## Something dows not work?
-Dont forget to set the basepath in your index.php and .htaccess file.
+## Testing
+* Clone or download this repo
+* Cd into the repo folder and run:
+* ```php -S 0.0.0.0:8080```
+* Than open your Webbrowser and navigate to http://localhost:8080
+
+## Something does not work?
+* Dont forget to set the basepath in your index.php and .htaccess file.
+* Enable mod_rewrite in your apache settings
