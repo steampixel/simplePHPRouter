@@ -15,7 +15,7 @@ The second argument will match the request method. The default method is 'get'.
 include('Route.php');
 
 Route::add('/user/([0-9]*)/edit',function($id){
-	echo 'Edit user with id '.$id.'<br/>';
+  echo 'Edit user with id '.$id.'<br/>';
 },'get');
 
 Route::run('/');
