@@ -4,6 +4,7 @@ DirectoryIndex index.php
 RewriteEngine on
 
 # set your rewrite base
+# Edit this in your init method too if you script lives in a subfolder
 RewriteBase /
 
 # Deliver the folder or file directly if it exists on the server
