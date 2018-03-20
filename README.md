@@ -36,7 +36,7 @@ Do not forget to edit the basepath in .htaccess if you are on apache.
 
 ## MIT License
 
-Copyright (c) [year] [fullname]
+Copyright (c) 2018 SteamPixel
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
