@@ -28,14 +28,18 @@ If your script lives in a subfolder e.g. /api/v1 set this basepath in your run m
 
 ```Route::run('/api/v1');```
 
-Do not forget to edit the basepath in .htaccess if you are on apache.
+Do not forget to edit the basepath in .htaccess too if you are on apache. In order to run the test files correctly inside a basepath you should also adjust the navigation links inside the index.php.
 
 ## Something does not work?
 * Dont forget to set the correct basepath as argument in your run method and in your .htaccess file.
 * Enable mod_rewrite in your apache settings
 
-## Test
+## Test setup
 There is a little Vagrant test setup. Just run ```vagrant up``` to spin up a Apache2 Webserver on Ubuntu. Then navigate to http://router.local after adding the machine IP to your hosts file.
+
+## Todo
+* Create demo configuration for nginx
+* Create composer configuration and upload to packagist.org
 
 ## MIT License
 
