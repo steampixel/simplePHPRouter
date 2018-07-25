@@ -34,6 +34,9 @@ Do not forget to edit the basepath in .htaccess if you are on apache.
 * Dont forget to set the correct basepath as argument in your run method and in your .htaccess file.
 * Enable mod_rewrite in your apache settings
 
+## Test
+There is a little Vagrant test setup. Just run ```vagrant up``` to spin up a Apache2 Webserver on Ubuntu. Then navigate to http://router.local after adding the machine IP to your hosts file.
+
 ## MIT License
 
 Copyright (c) 2018 SteamPixel
