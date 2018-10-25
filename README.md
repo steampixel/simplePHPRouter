@@ -7,8 +7,8 @@ The codebase is very small and very easy to understand. So you can use it as boi
 
 Take a look at the index.php file. As you can see the ```Route::add()``` method is used to add new routes to your project.
 The first argument takes the path segment. You can also use RegExp in there to parse out variables. 
-All matching variables will be pushed to the handler method.
-The second argument will match the request method. The default method is 'get'.
+All matching variables will be pushed to the handler method defined in the second argument.
+The third argument will match the request method. The default method is 'get'.
 
 ## Simple example:
 ```
