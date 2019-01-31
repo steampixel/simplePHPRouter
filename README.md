@@ -42,7 +42,7 @@ By default the router will ignore trailing slashes. Set the third parameter to t
 ## Test setup with Docker
 I have created a little Docker test setup.
 
-1. Build the image: docker build -t simplephprouter docker/image
+1. Build the image: ```docker build -t simplephprouter docker/image```
 
 2. Spin up a container
 	* On Linux / Mac or Windows Powershell use: ```docker run -d -p 80:80 -v $(pwd):/var/www/html --name simplephprouter simplephprouter```
