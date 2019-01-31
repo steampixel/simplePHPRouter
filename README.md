@@ -34,8 +34,19 @@ Do not forget to edit the basepath in .htaccess too if you are on Apache2. In or
 * Dont forget to set the correct basepath as argument in your run method and in your .htaccess file.
 * Enable mod_rewrite in your Apache2 settings
 
-## Test setup
-There is a little Vagrant test setup. Just run ```vagrant up``` to spin up a Apache2 Webserver on Ubuntu. Then navigate to http://router.local after adding the machine IP to your hosts file.
+## Test setup with docker
+I have created a little docker test setup.
+
+1. Build the image: docker build -t simplephprouter docker/image
+
+2. Spin up a container
+	* On Linux / Mac or Windows Powershell use: ```docker run -d -p 80:80 -v $(pwd):/var/www/html --name simplephprouter simplephprouter```
+	* On Windows CMD use ```docker run -d -p 80:80 -v %cd%:/var/www/html --name simplephprouter simplephprouter```
+
+3. Open your browser and navigate to http://localhost
+
+## Test setup with vagrant (not longer maintained)
+There is a little Vagrant test setup. Just run ```vagrant up``` to spin up a Apache2 Webserver on Ubuntu. Then navigate to http://router.local after adding the machine IP to your hosts file. This test setup is not longer maintained and will probably break in future. Use the docker test setup instead.
 
 ## Todo
 * Create demo configuration for nginx
