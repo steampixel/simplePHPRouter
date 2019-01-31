@@ -30,6 +30,11 @@ If your script lives in a subfolder e.g. /api/v1 set this basepath in your run m
 
 Do not forget to edit the basepath in .htaccess too if you are on Apache2. In order to run the test files correctly inside a basepath you should also adjust the navigation links inside the index.php.
 
+## Enable case sensitive routes and trailing slashes
+The second and third parameters of ```Route::run('/', false, false);``` are both set to false by default. 
+You can enable case sensitive mode by setting the second parameter to true.
+By default the router will ignore trailing slashes. Set the third parameter to true to avoid this.
+
 ## Something does not work?
 * Dont forget to set the correct basepath as argument in your run method and in your .htaccess file.
 * Enable mod_rewrite in your Apache2 settings

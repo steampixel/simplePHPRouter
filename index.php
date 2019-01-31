@@ -12,6 +12,10 @@ function navi () {
 	  <li><a href="/foo/bar/foo/bar">long route example</a></li>
 	  <li><a href="/contact-form">contact form</a></li>
 	  <li><a href="/test.html">test.html</a></li>
+	  <li><a href="/aTrailingSlashDoesNotMatters">aTrailingSlashDoesNotMatters</a></li>
+	  <li><a href="/aTrailingSlashDoesNotMatters/">aTrailingSlashDoesNotMatters/</a></li>
+	  <li><a href="/theCaseDoesNotMatters">theCaseDoesNotMatters</a></li>
+	  <li><a href="/thecasedoesnotmatters">thecasedoesnotmatters</a></li>
 	  <li><a href="/this-route-is-not-defined">404 Test</a></li>
 	  <li><a href="/this-route-is-defined">405 Test</a></li>
 	</ul>
@@ -86,6 +90,18 @@ Route::add('/foo/bar/foo/bar',function(){
   echo 'This is the second match <br/>';
 });
 
+// Trailing slash example
+Route::add('/aTrailingSlashDoesNotMatters',function(){
+  navi();
+  echo 'a trailing slash does not matters<br/>';
+});
+
+// Case example
+Route::add('/theCaseDoesNotMatters',function(){
+  navi();
+  echo 'the case does not matters<br/>';
+});
+
 // 405 test
 Route::add('/this-route-is-defined',function(){
   navi();
@@ -113,5 +129,8 @@ Route::run('/');
 // If your script lives in a subfolder you can use the following example
 // Do not forget to edit the basepath in .htaccess if you are on apache
 // Route::run('/api/v1');
+
+// Enable case sensitive mode and trailing slashes by setting both to true
+// Route::run('/', true, true);
 
 ?>
