@@ -39,8 +39,8 @@ By default the router will ignore trailing slashes. Set the third parameter to t
 * Dont forget to set the correct basepath as argument in your run method and in your .htaccess file.
 * Enable mod_rewrite in your Apache2 settings
 
-## Test setup with docker
-I have created a little docker test setup.
+## Test setup with Docker
+I have created a little Docker test setup.
 
 1. Build the image: docker build -t simplephprouter docker/image
 
