@@ -25,12 +25,6 @@ function navi () {
 // Include router class
 include('Route.php');
 
-// Add navigation route (startpage)
-Route::add('/',function(){
-  navi();
-  echo 'Welcome :-)';
-});
-
 // Add base route (startpage)
 Route::add('/',function(){
   navi();
