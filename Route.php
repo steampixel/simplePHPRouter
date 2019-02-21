@@ -66,21 +66,24 @@ class Route{
 
         $path_match_found = true;
 
-        // Check method match
-        if(strtolower($method) == strtolower($route['method'])){
+        // Cast allowed method to array if it's not one already, then run through all methods
+        foreach ((array)$route['method'] as $allowedMethod) {
+            // Check method match
+            if(strtolower($method) == strtolower($allowedMethod)){
 
-          array_shift($matches);// Always remove first element. This contains the whole string
+                array_shift($matches);// Always remove first element. This contains the whole string
 
-          if($basepath!=''&&$basepath!='/'){
-            array_shift($matches);// Remove basepath
-          }
+                if($basepath!=''&&$basepath!='/'){
+                    array_shift($matches);// Remove basepath
+                }
 
-          call_user_func_array($route['function'], $matches);
+                call_user_func_array($route['function'], $matches);
 
-          $route_match_found = true;
+                $route_match_found = true;
 
-          // Do not check other routes
-          break;
+                // Do not check other routes
+                break;
+            }
         }
       }
     }

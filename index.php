@@ -11,6 +11,7 @@ function navi () {
 	  <li><a href="/foo/5/bar">foo 5 bar</a></li>
 	  <li><a href="/foo/bar/foo/bar">long route example</a></li>
 	  <li><a href="/contact-form">contact form</a></li>
+	  <li><a href="/get-post-sample">get+post example</a></li>
 	  <li><a href="/test.html">test.html</a></li>
 	  <li><a href="/aTrailingSlashDoesNotMatters">aTrailingSlashDoesNotMatters</a></li>
 	  <li><a href="/aTrailingSlashDoesNotMatters/">aTrailingSlashDoesNotMatters/</a></li>
@@ -43,7 +44,7 @@ Route::add('/test.html',function(){
   echo 'Hello from test.html';
 });
 
-// Post route example
+// Get route example
 Route::add('/contact-form',function(){
   navi();
   echo '<form method="post"><input type="text" name="test" /><input type="submit" value="send" /></form>';
@@ -55,6 +56,17 @@ Route::add('/contact-form',function(){
   echo 'Hey! The form has been sent:<br/>';
   print_r($_POST);
 },'post');
+
+// Get and Post route example
+Route::add('/get-post-sample',function(){
+  navi();
+	echo 'You can GET this page and also POST this form back to it';
+	echo '<form method="post"><input type="text" name="input" /><input type="submit" value="send" /></form>';
+	if(isset($_POST["input"])){
+		echo 'I also received a POST with this data:<br/>';
+		print_r($_POST);
+	}
+},['get','post']);
 
 // Route with regexp parameter
 // Be aware that (.*) will match / (slash) too. For example: /user/foo/bar/edit
