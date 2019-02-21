@@ -6,6 +6,13 @@ class Route{
   private static $pathNotFound = null;
   private static $methodNotAllowed = null;
 
+  /**
+    * Function used to add a new route
+    * @param string $expression    Route string or expression
+    * @param callable $function    Function to call when route with allowed method is found
+    * @param string|array $method  Either a string of allowed method or an array with string values
+    *
+    */
   public static function add($expression, $function, $method = 'get'){
     array_push(self::$routes,Array(
       'expression' => $expression,
