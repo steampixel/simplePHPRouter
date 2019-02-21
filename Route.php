@@ -22,13 +22,17 @@ class Route{
     self::$methodNotAllowed = $function;
   }
 
-  public static function run($basepath = '/'){
+  public static function run($basepath = '/', $case_matters = false, $trailing_slash_matters = false){
 
     // Parse current url
     $parsed_url = parse_url($_SERVER['REQUEST_URI']);//Parse Uri
 
     if(isset($parsed_url['path']) && $parsed_url['path'] != '/'){
-      $path = rtrim($parsed_url['path'], '/');
+	  if($trailing_slash_matters){
+		$path = $parsed_url['path'];
+	  }else{
+		$path = rtrim($parsed_url['path'], '/');
+	  }
     }else{
       $path = '/';
     }
@@ -57,8 +61,8 @@ class Route{
 
       // echo $route['expression'].'<br/>';
 
-      // Check path match	
-      if(preg_match('#'.$route['expression'].'#',$path,$matches)){
+      // Check path match
+      if(preg_match('#'.$route['expression'].'#'.($case_matters ? '':'i'),$path,$matches)){
 
         $path_match_found = true;
 
