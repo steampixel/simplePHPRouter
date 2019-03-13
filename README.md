@@ -53,6 +53,10 @@ I have created a little Docker test setup.
 ## Test setup with Vagrant (not longer maintained)
 There is a little Vagrant test setup. Just run ```vagrant up``` to spin up a Apache2 Webserver on Ubuntu. Then navigate to http://router.local after adding the machine IP to your hosts file. This test setup is not longer maintained and will probably break in future. Use the docker test setup instead.
 
+## Themes, layouts, pages and components
+If you are interested in some basic concepts on how to build a simple PHP page using this router including themes, layouts, pages and components checkout this repo: https://github.com/steampixel/simplePHPPages
+This project will give you some ideas and basics on how to get started with no dependencys.
+
 ## Todo
 * Create demo configuration for nginx
 * Create composer configuration and upload to packagist.org
