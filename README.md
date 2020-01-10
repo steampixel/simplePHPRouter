@@ -6,7 +6,7 @@ The router supports dynamic path parameters, special 404 and 405 routes as well 
 The codebase is very small and very easy to understand. So you can use it as a boilerplate for a more complex router.
 
 Take a look at the index.php file. As you can see the `Route::add()` method is used to add new routes to your project.
-The first argument takes the path segment. You can also use RegExp in there to parse out variables. 
+The first argument takes the path segment. You can also use RegExp in there to parse out variables.
 All matching variables will be pushed to the handler method defined in the second argument.
 The third argument will match the request method. The default method is 'get'.
 
@@ -33,7 +33,7 @@ Route::run('/api/v1');
 Do not forget to edit the basepath in .htaccess too if you are on Apache2. In order to run the test files correctly inside a basepath you should also adjust the navigation links inside the index.php.
 
 ## Enable case sensitive routes and trailing slashes
-The second and third parameters of `Route::run('/', false, false);` are both set to false by default. 
+The second and third parameters of `Route::run('/', false, false);` are both set to false by default.
 You can enable case sensitive mode by setting the second parameter to true.
 By default the router will ignore trailing slashes. Set the third parameter to true to avoid this.
 
@@ -44,7 +44,7 @@ By default the router will ignore trailing slashes. Set the third parameter to t
 ## Test setup with Docker
 I have created a little Docker test setup.
 
-1. Build the image: `docker build -t simplephprouter docker/image`
+1. Build the image: `docker build -t simplephprouter docker/image-php-7.2`
 
 2. Spin up a container
 	* On Linux / Mac or Windows Powershell use: `docker run -d -p 80:80 -v $(pwd):/var/www/html --name simplephprouter simplephprouter`
