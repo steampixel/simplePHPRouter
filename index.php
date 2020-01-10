@@ -1,4 +1,5 @@
 <?php
+
 function navi() {
   echo <<<EOD
   Navigation:
@@ -11,6 +12,7 @@ function navi() {
       <li><a href="/contact-form">contact form</a></li>
       <li><a href="/get-post-sample">get+post example</a></li>
       <li><a href="/test.html">test.html</a></li>
+      <li><a href="/phpinfo">PHP Info</a></li>
       <li><a href="/aTrailingSlashDoesNotMatter">aTrailingSlashDoesNotMatter</a></li>
       <li><a href="/aTrailingSlashDoesNotMatter/">aTrailingSlashDoesNotMatter/</a></li>
       <li><a href="/theCaseDoesNotMatter">theCaseDoesNotMatter</a></li>
@@ -41,6 +43,14 @@ Route::add('/index.php', function() {
 Route::add('/test.html', function() {
   navi();
   echo 'Hello from test.html';
+});
+
+// This route is for debugging only
+// It simply prints out some php infos
+// Do not use this route on production systems!
+Route::add('/phpinfo', function() {
+  navi();
+  phpinfo();
 });
 
 // Post route example
