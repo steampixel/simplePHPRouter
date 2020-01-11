@@ -99,10 +99,9 @@ Route::add('/(.*)/(.*)/(.*)/(.*)', function($var1,$var2,$var3,$var4) {
 });
 
 // Long route example
-// This route gets never triggered because the route before matches too
-// TODO: Fix this; it'll get triggered
+// By default this route gets never triggered because the route before matches too
 Route::add('/foo/bar/foo/bar', function() {
-  echo 'This is the second match <br>';
+  echo 'This is the second match (This route should only work in multi match mode) <br>';
 });
 
 // Trailing slash example
@@ -153,5 +152,5 @@ Route::run('/');
 // Do not forget to edit the basepath in .htaccess if you are on apache
 // Route::run('/api/v1');
 
-// Enable case sensitive mode and trailing slashes by setting both to true
-// Route::run('/', true, true);
+// Enable case sensitive mode, trailing slashes and multi match mode by setting the params to true
+// Route::run('/', true, true, true);

@@ -32,10 +32,12 @@ Route::run('/api/v1');
 
 Do not forget to edit the basepath in .htaccess too if you are on Apache2. In order to run the test files correctly inside a basepath you should also adjust the navigation links inside the index.php.
 
-## Enable case sensitive routes and trailing slashes
-The second and third parameters of `Route::run('/', false, false);` are both set to false by default.
-You can enable case sensitive mode by setting the second parameter to true.
-By default the router will ignore trailing slashes. Set the third parameter to true to avoid this.
+## Enable case sensitive routes, trailing slashes and multi match mode
+The second and third parameters of `Route::run('/', false, false, true);` are both set to false by default.
+The fourth parameter is set to true by default. Using this parameters you can switch on and off several options:
+* Second parameter ($case_matters): You can enable case sensitive mode by setting the second parameter to true.
+* Third parameter ($trailing_slash_matters): By default the router will ignore trailing slashes. Set this parameter to true to avoid this.
+* Fourth parameter ($multimatch): By default the router will only execute the first matching route. Set this parameter to true to enable multi match mode.
 
 ## Something does not work?
 * Don't forget to set the correct basepath as the first argument in your `run()` method and in your .htaccess file.

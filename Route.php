@@ -28,7 +28,7 @@ class Route {
     self::$methodNotAllowed = $function;
   }
 
-  public static function run($basepath = '/', $case_matters = false, $trailing_slash_matters = false) {
+  public static function run($basepath = '/', $case_matters = false, $trailing_slash_matters = false, $multimatch = false) {
     // Parse current URL
     $parsed_url = parse_url($_SERVER['REQUEST_URI']);
 
@@ -87,6 +87,12 @@ class Route {
           }
         }
       }
+
+      // Break the loop if the first found route is a match
+      if($route_match_found&&!$multimatch){
+        break;
+      }
+
     }
 
     // No matching route was found
