@@ -13,7 +13,7 @@
     "require": {},
     "autoload": {
       "psr-0": {
-          "SteamPixel": "src/"
+          "Steampixel": "src/"
       }
   }
 }

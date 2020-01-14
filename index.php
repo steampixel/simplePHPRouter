@@ -1,10 +1,10 @@
 <?php
 
 // Use this namespace
-use SteamPixel\Route;
+use Steampixel\Route;
 
 // Include router class
-include 'Route.php';
+include 'src/Route.php';
 
 function navi() {
   echo <<<EOD
