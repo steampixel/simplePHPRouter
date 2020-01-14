@@ -1,0 +1,14 @@
+{
+    "name": "steampixel/route",
+    "description": "This is a simple and small PHP router that can handel the whole url routing for your project.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "SteamPixel",
+            "email": "info@steampixel.de"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
