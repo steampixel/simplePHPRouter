@@ -7,6 +7,10 @@
         {
             "name": "SteamPixel",
             "email": "info@steampixel.de"
+        },
+        {
+            "name": "Maximilian Götz",
+            "email": "contact@maxbits.net"
         }
     ],
     "minimum-stability": "dev",
