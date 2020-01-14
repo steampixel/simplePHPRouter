@@ -1,6 +1,6 @@
 <?php
 
-namespace SteamPixel;
+namespace Steampixel;
 
 class Route {
 
