@@ -85,7 +85,6 @@ This project will give you some ideas and basics on how to get started without a
 
 ## Todo
 * Create demo configuration for nginx
-* Create Composer configuration and upload to packagist.org
 
 ## License
 This project is licensed under the MIT License. See LICENSE for further information.
