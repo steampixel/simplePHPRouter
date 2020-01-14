@@ -10,7 +10,8 @@
         },
         {
             "name": "Maximilian Götz",
-            "email": "contact@maxbits.net"
+            "email": "contact@maxbits.net",
+            "homepage": "https://www.maxbits.net/"
         }
     ],
     "minimum-stability": "dev",
