@@ -12,17 +12,41 @@ The third argument will match the request method. The default method is 'get'.
 
 ## Simple example:
 ```php
-use Steampixel\Route;
+// Require the class
 include 'src\Steampixel\Route.php';
 
+// Use this namespace
+use Steampixel\Route;
+
+// Add the first route
 Route::add('/user/([0-9]*)/edit', function($id) {
   echo 'Edit user with id '.$id.'<br>';
 }, 'get');
 
+// Run the router
 Route::run('/');
 ```
 
 You will find a more complex example with a build in navigation in the index.php file.
+
+## Installation using Composer
+Just run `composer require steampixel/simple-php-router`
+Than add the autoloader to your project like this:
+```php
+// Autoload files using composer
+require_once __DIR__ . '/vendor/autoload.php';
+
+// Use this namespace
+use Steampixel\Route;
+
+// Add your first route
+Route::add('/', function() {
+  echo 'Welcome :-)';
+});
+
+// Run the router
+Route::run('/');
+```
 
 ## Use a different basepath
 If your script lives in a subfolder (e.g. /api/v1) set this basepath in your run method:
