@@ -4,7 +4,7 @@
 use Steampixel\Route;
 
 // Include router class
-include 'src/Route.php';
+include 'src/Steampixel/Route.php';
 
 function navi() {
   echo <<<EOD

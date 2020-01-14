@@ -13,7 +13,7 @@ The third argument will match the request method. The default method is 'get'.
 ## Simple example:
 ```php
 use Steampixel\Route;
-include 'Route.php';
+include 'src\Steampixel\Route.php';
 
 Route::add('/user/([0-9]*)/edit', function($id) {
   echo 'Edit user with id '.$id.'<br>';
