@@ -14,3 +14,6 @@ RUN apt-get update -y
 
 # Install git
 RUN apt-get install git -y
+
+# Install zip
+RUN apt-get install zip -y
