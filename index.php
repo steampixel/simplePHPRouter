@@ -1,5 +1,11 @@
 <?php
 
+// Use this namespace
+use SteamPixel\Route;
+
+// Include router class
+include 'Route.php';
+
 function navi() {
   echo <<<EOD
   Navigation:
@@ -22,9 +28,6 @@ function navi() {
   </ul>
 EOD;
 }
-
-// Include router class
-include 'Route.php';
 
 // Add base route (startpage)
 Route::add('/', function() {

@@ -1,4 +1,7 @@
 <?php
+
+namespace SteamPixel;
+
 class Route {
 
   private static $routes = Array();
