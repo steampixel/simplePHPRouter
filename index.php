@@ -6,27 +6,30 @@ use Steampixel\Route;
 // Include router class
 include 'src/Steampixel/Route.php';
 
+// Define a global basepath
+define('BASEPATH','/');
+
 function navi() {
-  echo <<<EOD
+  echo '
   Navigation:
   <ul>
-      <li><a href="/">home</a></li>
-      <li><a href="/index.php">index.php</a></li>
-      <li><a href="/user/3/edit">edit user 3</a></li>
-      <li><a href="/foo/5/bar">foo 5 bar</a></li>
-      <li><a href="/foo/bar/foo/bar">long route example</a></li>
-      <li><a href="/contact-form">contact form</a></li>
-      <li><a href="/get-post-sample">get+post example</a></li>
-      <li><a href="/test.html">test.html</a></li>
-      <li><a href="/phpinfo">PHP Info</a></li>
-      <li><a href="/aTrailingSlashDoesNotMatter">aTrailingSlashDoesNotMatter</a></li>
-      <li><a href="/aTrailingSlashDoesNotMatter/">aTrailingSlashDoesNotMatter/</a></li>
-      <li><a href="/theCaseDoesNotMatter">theCaseDoesNotMatter</a></li>
-      <li><a href="/thecasedoesnotmatter">thecasedoesnotmatter</a></li>
-      <li><a href="/this-route-is-not-defined">404 Test</a></li>
-      <li><a href="/this-route-is-defined">405 Test</a></li>
+      <li><a href="'.BASEPATH.'">home</a></li>
+      <li><a href="'.BASEPATH.'index.php">index.php</a></li>
+      <li><a href="'.BASEPATH.'user/3/edit">edit user 3</a></li>
+      <li><a href="'.BASEPATH.'foo/5/bar">foo 5 bar</a></li>
+      <li><a href="'.BASEPATH.'foo/bar/foo/bar">long route example</a></li>
+      <li><a href="'.BASEPATH.'contact-form">contact form</a></li>
+      <li><a href="'.BASEPATH.'get-post-sample">get+post example</a></li>
+      <li><a href="'.BASEPATH.'test.html">test.html</a></li>
+      <li><a href="'.BASEPATH.'phpinfo">PHP Info</a></li>
+      <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter">aTrailingSlashDoesNotMatter</a></li>
+      <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter/">aTrailingSlashDoesNotMatter/</a></li>
+      <li><a href="'.BASEPATH.'theCaseDoesNotMatter">theCaseDoesNotMatter</a></li>
+      <li><a href="'.BASEPATH.'thecasedoesnotmatter">thecasedoesnotmatter</a></li>
+      <li><a href="'.BASEPATH.'this-route-is-not-defined">404 Test</a></li>
+      <li><a href="'.BASEPATH.'this-route-is-defined">405 Test</a></li>
   </ul>
-EOD;
+  ';
 }
 
 // Add base route (startpage)
@@ -149,7 +152,7 @@ Route::methodNotAllowed(function($path, $method) {
 
 // Run the Router with the given Basepath
 // If your script lives in the web root folder use a / or leave it empty
-Route::run('/');
+Route::run(BASEPATH);
 
 // If your script lives in a subfolder you can use the following example
 // Do not forget to edit the basepath in .htaccess if you are on apache
