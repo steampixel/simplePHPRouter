@@ -1,6 +1,6 @@
 # Simple PHP Router
 
-Hey! This is a simple and small PHP router that can handle the whole URL routing for your project.
+Hey! This is a simple and small single class PHP router that can handle the whole URL routing for your project.
 It utilizes RegExp and PHP's anonymous functions to create a lightweight and fast routing system.
 The router supports dynamic path parameters, special 404 and 405 routes as well as verification of request methods like GET, POST, PUT, DELETE, etc.
 The codebase is very small and very easy to understand. So you can use it as a boilerplate for a more complex router.

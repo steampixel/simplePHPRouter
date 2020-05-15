@@ -5,8 +5,14 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "SteamPixel",
-            "email": "info@steampixel.de"
+            "name": "Christoph Stitz",
+            "email": "info@steampixel.de",
+            "homepage": "https://steampixel.de/"
+        },
+        {
+            "name": "Maximilian Götz",
+            "email": "contact@maxbits.net",
+            "homepage": "https://www.maxbits.net/"
         }
     ],
     "minimum-stability": "dev",
