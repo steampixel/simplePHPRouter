@@ -55,7 +55,7 @@ If your script lives in a subfolder (e.g. /api/v1) set this basepath in your run
 Route::run('/api/v1');
 ```
 
-Do not forget to edit the basepath in .htaccess too if you are on Apache2. In order to run the test files correctly inside a basepath you should also adjust the navigation links inside the index.php.
+Do not forget to edit the basepath in .htaccess too if you are on Apache2.
 
 ## Enable case sensitive routes, trailing slashes and multi match mode
 The second, third and fourth parameters of `Route::run('/', false, false, false);` are set to false by default.
