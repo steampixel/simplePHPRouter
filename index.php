@@ -9,6 +9,10 @@ include 'src/Steampixel/Route.php';
 // Define a global basepath
 define('BASEPATH','/');
 
+// If your script lives in a subfolder you can use the following example
+// Do not forget to edit the basepath in .htaccess if you are on apache
+// define('BASEPATH','/api/v1');
+
 function navi() {
   echo '
   Navigation:
@@ -151,12 +155,7 @@ Route::methodNotAllowed(function($path, $method) {
 });
 
 // Run the Router with the given Basepath
-// If your script lives in the web root folder use a / or leave it empty
 Route::run(BASEPATH);
 
-// If your script lives in a subfolder you can use the following example
-// Do not forget to edit the basepath in .htaccess if you are on apache
-// Route::run('/api/v1');
-
 // Enable case sensitive mode, trailing slashes and multi match mode by setting the params to true
-// Route::run('/', true, true, true);
+// Route::run(BASEPATH, true, true, true);
