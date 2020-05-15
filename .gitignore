@@ -5,4 +5,9 @@
 # Compser files
 /vendor/
 
+# local test environment
 /test/
+docker-build.sh
+docker-bash.sh
+docker-run.sh
+docker-rm.sh
