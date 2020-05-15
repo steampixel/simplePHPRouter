@@ -31,18 +31,31 @@ class Route {
     self::$methodNotAllowed = $function;
   }
 
-  public static function run($basepath = '/', $case_matters = false, $trailing_slash_matters = false, $multimatch = false) {
+  public static function run($basepath = '', $case_matters = false, $trailing_slash_matters = false, $multimatch = false) {
+
+    // The basepath never needs a trailing slash
+    // Because the trailing slash will be added using the route expressions
+    $basepath = rtrim($basepath, '/');
+
     // Parse current URL
     $parsed_url = parse_url($_SERVER['REQUEST_URI']);
 
-    if (isset($parsed_url['path']) && $parsed_url['path'] != '/') {
-	  if ($trailing_slash_matters) {
-		$path = $parsed_url['path'];
-	  } else {
-		$path = rtrim($parsed_url['path'], '/');
-	  }
-    } else {
-      $path = '/';
+    $path = '/';
+
+    // If there is a path available
+    if (isset($parsed_url['path'])) {
+      // If the trailing slash matters
+  	  if ($trailing_slash_matters) {
+  		  $path = $parsed_url['path'];
+  	  } else {
+        // If the path is not equal to the base path (including a trailing slash)
+        if($basepath.'/'!=$parsed_url['path']) {
+          // Cut the trailing slash away because it does not matters
+          $path = rtrim($parsed_url['path'], '/');
+        } else {
+          $path = $parsed_url['path'];
+        }
+  	  }
     }
 
     // Get current request method
