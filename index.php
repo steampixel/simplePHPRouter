@@ -63,7 +63,7 @@ Route::add('/phpinfo', function() {
   phpinfo();
 });
 
-// Post route example
+// Get route example
 Route::add('/contact-form', function() {
   navi();
   echo '<form method="post"><input type="text" name="test"><input type="submit" value="send"></form>';
