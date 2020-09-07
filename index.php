@@ -25,6 +25,7 @@ function navi() {
       <li><a href="'.BASEPATH.'contact-form">contact form</a></li>
       <li><a href="'.BASEPATH.'get-post-sample">get+post example</a></li>
       <li><a href="'.BASEPATH.'test.html">test.html</a></li>
+      <li><a href="'.BASEPATH.'blog/how-to-use-include-example">How to push data to included files</a></li>
       <li><a href="'.BASEPATH.'phpinfo">PHP Info</a></li>
       <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter">aTrailingSlashDoesNotMatter</a></li>
       <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter/">aTrailingSlashDoesNotMatter/</a></li>
@@ -49,6 +50,13 @@ Route::add('/index.php', function() {
 });
 
 // Simple test route that simulates static html file
+// TODO: Fix this for some web servers
+Route::add('/blog/([a-z-0-9-]*)', function($slug) {
+  navi();
+  include('include-example.php');
+});
+
+// This example shows how to include files and how to push data to them
 // TODO: Fix this for some web servers
 Route::add('/test.html', function() {
   navi();
