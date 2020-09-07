@@ -68,6 +68,15 @@ Using this parameters you can switch on and off several options:
 * Don't forget to set the correct basepath as the first argument in your `run()` method and in your .htaccess file.
 * Enable mod_rewrite in your Apache2 settings, in case you're using Apache2: `a2enmod apache2`
 
+## What skills do you need?
+Please be aware that for this router you need a basic understanding of PHP. Many problems stem from people lacking basic programming knowledge. You should therefore have the following skills:
+* Basic PHP Knowledge
+* Basic understanding of RegExp in PHP: https://www.guru99.com/php-regular-expressions.html
+* Basic understanding of anonymous functions and how to push data inside it: https://www.php.net/manual/en/functions.anonymous.php
+* Basic understanding of including and requiring files and how to push data to them: https://stackoverflow.com/questions/4315271/how-to-pass-arguments-to-an-included-file/5503326
+
+Please note that we are happy to help you if you have problems with this router. Unfortunately, we don't have a lot of time, so we can't help you learn PHP basics.
+
 ## Test setup with Docker
 I have created a little Docker test setup.
 
