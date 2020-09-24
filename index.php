@@ -50,17 +50,15 @@ Route::add('/index.php', function() {
 });
 
 // Simple test route that simulates static html file
-// TODO: Fix this for some web servers
-Route::add('/blog/([a-z-0-9-]*)', function($slug) {
-  navi();
-  include('include-example.php');
-});
-
-// This example shows how to include files and how to push data to them
-// TODO: Fix this for some web servers
 Route::add('/test.html', function() {
   navi();
   echo 'Hello from test.html';
+});
+
+// This example shows how to include files and how to push data to them
+Route::add('/blog/([a-z-0-9-]*)', function($slug) {
+  navi();
+  include('include-example.php');
 });
 
 // This route is for debugging only
