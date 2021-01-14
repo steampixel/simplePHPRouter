@@ -57,9 +57,9 @@ class Route {
         }
   	  }
     }
-    
+
   	$path = urldecode($path);
-    
+
     // Get current request method
     $method = $_SERVER['REQUEST_METHOD'];
 
@@ -96,7 +96,9 @@ class Route {
               array_shift($matches); // Remove basepath
             }
 
-            call_user_func_array($route['function'], $matches);
+            if($return_value = call_user_func_array($route['function'], $matches)) {
+              echo $return_value;
+            }
 
             $route_match_found = true;
 
@@ -107,7 +109,7 @@ class Route {
       }
 
       // Break the loop if the first found route is a match
-      if($route_match_found&&!$multimatch){
+      if($route_match_found&&!$multimatch) {
         break;
       }
 

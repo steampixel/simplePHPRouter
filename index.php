@@ -134,6 +134,17 @@ Route::add('/الرقص-العربي', function() {
   echo 'Arabic example. Non english letters should work too <br>';
 });
 
+// Return example
+// Returned data gets echoed
+Route::add('/return', function() {
+  navi();
+  return 'This text gets returned by the add method';
+});
+
+// Arrow function example
+// Note: You can use this example only if you are on PHP 7.4 or higher
+// Route::add('/arrow/([a-z-0-9-]*)', fn($foo) => 'This is a working arrow function example. Parameter: '.$foo );
+
 // Trailing slash example
 Route::add('/aTrailingSlashDoesNotMatter', function() {
   navi();
