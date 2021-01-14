@@ -27,6 +27,8 @@ function navi() {
       <li><a href="'.BASEPATH.'test.html">test.html</a></li>
       <li><a href="'.BASEPATH.'blog/how-to-use-include-example">How to push data to included files</a></li>
       <li><a href="'.BASEPATH.'phpinfo">PHP Info</a></li>
+      <li><a href="'.BASEPATH.'äöü">Non english route: german</a></li>
+      <li><a href="'.BASEPATH.'الرقص-العربي">Non english route: arabic</a></li>
       <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter">aTrailingSlashDoesNotMatter</a></li>
       <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter/">aTrailingSlashDoesNotMatter/</a></li>
       <li><a href="'.BASEPATH.'theCaseDoesNotMatter">theCaseDoesNotMatter</a></li>
@@ -120,9 +122,16 @@ Route::add('/foo/bar/foo/bar', function() {
   echo 'This is the second match (This route should only work in multi match mode) <br>';
 });
 
-// Route with non english letters
+// Route with non english letters: german example
 Route::add('/äöü', function() {
-  echo 'Non english letters should work too <br>';
+  navi();
+  echo 'German example. Non english letters should work too <br>';
+});
+
+// Route with non english letters: arabic example
+Route::add('/الرقص-العربي', function() {
+  navi();
+  echo 'Arabic example. Non english letters should work too <br>';
 });
 
 // Trailing slash example
