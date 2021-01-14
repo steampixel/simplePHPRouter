@@ -120,6 +120,11 @@ Route::add('/foo/bar/foo/bar', function() {
   echo 'This is the second match (This route should only work in multi match mode) <br>';
 });
 
+// Route with non english letters
+Route::add('/äöü', function() {
+  echo 'Non english letters should work too <br>';
+});
+
 // Trailing slash example
 Route::add('/aTrailingSlashDoesNotMatter', function() {
   navi();
