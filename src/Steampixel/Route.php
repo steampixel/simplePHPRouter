@@ -57,7 +57,9 @@ class Route {
         }
   	  }
     }
-
+    
+  	$path = urldecode($path);
+    
     // Get current request method
     $method = $_SERVER['REQUEST_METHOD'];
 
@@ -81,7 +83,7 @@ class Route {
       $route['expression'] = $route['expression'].'$';
 
       // Check path match
-      if (preg_match('#'.$route['expression'].'#'.($case_matters ? '' : 'i'), $path, $matches)) {
+      if (preg_match('#'.$route['expression'].'#'.($case_matters ? '' : 'iu'), $path, $matches)) {
         $path_match_found = true;
 
         // Cast allowed method to array if it's not one already, then run through all methods
