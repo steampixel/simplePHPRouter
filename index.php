@@ -29,6 +29,7 @@ function navi() {
       <li><a href="'.BASEPATH.'phpinfo">PHP Info</a></li>
       <li><a href="'.BASEPATH.'äöü">Non english route: german</a></li>
       <li><a href="'.BASEPATH.'الرقص-العربي">Non english route: arabic</a></li>
+      <li><a href="'.BASEPATH.'global/test123">Inject variables to local scope</a></li>
       <li><a href="'.BASEPATH.'arrow/test123">Arrow function test (please enable this route first)</a></li>
       <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter">aTrailingSlashDoesNotMatter</a></li>
       <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter/">aTrailingSlashDoesNotMatter/</a></li>
@@ -135,8 +136,21 @@ Route::add('/الرقص-العربي', function() {
   echo 'Arabic example. Non english letters should work too <br>';
 });
 
+// Use variables from global scope
+// You can use for example use() to inject variables to local scope
+// You can use global to register the variable in local scope
+$foo = 'foo';
+$bar = 'bar';
+Route::add('/global/([a-z-0-9-]*)', function($param) use($foo) {
+  global $bar;
+  navi();
+  echo 'The param is '.$param.'<br/>';
+  echo 'Foo is '.$foo.'<br/>';
+  echo 'Bar is '.$bar.'<br/>';
+});
+
 // Return example
-// Returned data gets echoed
+// Returned data gets printed
 Route::add('/return', function() {
   navi();
   return 'This text gets returned by the add method';
