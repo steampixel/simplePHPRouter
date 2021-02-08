@@ -23,6 +23,10 @@ class Route {
     ));
   }
 
+  public static function getAll(){
+    return self::$routes;
+  }
+
   public static function pathNotFound($function) {
     self::$pathNotFound = $function;
   }

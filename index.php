@@ -37,6 +37,7 @@ function navi() {
       <li><a href="'.BASEPATH.'thecasedoesnotmatter">thecasedoesnotmatter</a></li>
       <li><a href="'.BASEPATH.'this-route-is-not-defined">404 Test</a></li>
       <li><a href="'.BASEPATH.'this-route-is-defined">405 Test</a></li>
+      <li><a href="'.BASEPATH.'known-routes">known routes</a></li>
   </ul>
   ';
 }
@@ -199,6 +200,17 @@ Route::methodNotAllowed(function($path, $method) {
   navi();
   echo 'Error 405 :-(<br>';
   echo 'The requested path "'.$path.'" exists. But the request method "'.$method.'" is not allowed on this path!';
+});
+
+// Return all known routes
+Route::add('/known-routes', function() {
+  navi();
+  $routes = Route::getAll();
+  echo '<ul>';
+  foreach($routes as $route) {
+    echo '<li>'.$route['expression'].'</li>';
+  }
+  echo '</ul>';
 });
 
 // Run the Router with the given Basepath
