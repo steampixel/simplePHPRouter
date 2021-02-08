@@ -77,7 +77,6 @@ Please be aware that for this router you need a basic understanding of PHP. Many
 * Windows Only - Setup IIS and PHP: https://docs.microsoft.com/en-us/iis/application-frameworks/scenario-build-a-php-website-on-iis/configuring-step-1-install-iis-and-php.
 * Windows Only - Creating Websites in IIS: https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/create-a-web-site.
 
-
 Please note that we are happy to help you if you have problems with this router. Unfortunately, we don't have a lot of time, so we can't help you learn PHP basics.
 
 ## Test setup with Docker
