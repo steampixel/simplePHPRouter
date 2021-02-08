@@ -92,20 +92,16 @@ I have created a little Docker test setup.
 3. Open your browser and navigate to http://localhost
 
 ## Test Setup in Windows using IIS
-With IIS now fully supporting PHP, this example can be run using the included web.config. The web.config has a rewrite rule, similar to the .htaccess rewrite rule, but specifically for IIS. The rewrite rule will send all incoming requests to index.php in your root. The rest is done by the simple php router. 
+With IIS now fully supporting PHP, this example can be run using the included web.config. The web.config has a rewrite rule, similar to the .htaccess rewrite rule, but specifically for IIS. The rewrite rule will send all incoming requests to index.php in your root. The rest is done by the simple php router.
 ### Setup
 _This setup tutorial assumes you have the knowledge to create sites in IIS and set up bindings for http/https and custom DNS. If you need more information, this [article](https://docs.microsoft.com/en-us/iis/get-started/getting-started-with-iis/create-a-web-site) will help you with that part._
-1. If you haven't done so yet, install php on windows. This article [Install IIS and PHP | Microsoft Docs ](https://docs.microsoft.com/en-us/iis/application-frameworks/scenario-build-a-php-website-on-iis/configuring-step-1-install-iis-and-php) will guide you to install the required php dependencies on your windows machine. 
+1. If you haven't done so yet, install php on windows. This article [Install IIS and PHP | Microsoft Docs ](https://docs.microsoft.com/en-us/iis/application-frameworks/scenario-build-a-php-website-on-iis/configuring-step-1-install-iis-and-php) will guide you to install the required php dependencies on your windows machine.
 2. In IIS Manager, create a site and point the physical location to root of the simplePHPRouter folder. It is recommended you connect to the the physical location with an account that has "Read/Write" rights to that folder.
-3. (Optional) Create a DNS entry in your hosts file pointing 127.0.0.1 to the domain name you have used to set up the site. 
+3. (Optional) Create a DNS entry in your hosts file pointing 127.0.0.1 to the domain name you have used to set up the site.
 4. Browse to the newly created website and the sample site should display now.
 
 ## Todo
 * Create demo configuration for nginx
-
-## Themes, layouts, pages and components
-If you are interested in some basic concepts on how to build a simple PHP page using this router including themes, layouts, pages and components checkout this repo: https://github.com/steampixel/simplePHPPages
-This project will give you some ideas and basics on how to get started without any dependencies.
 
 ## License
 This project is licensed under the MIT License. See LICENSE for further information.
