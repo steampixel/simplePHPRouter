@@ -69,7 +69,7 @@ Route::add('/', function() {
 
 ## Use arrow functions
 Since PHP 7.4 you can also use arrow functions to output your content. So you can easily use variables from outside and you can write shorter code.
-Please be aware that an Arrow function must always return a value. Therefore you cannot use `echo` here.
+Please be aware that an Arrow function must always return a value. Therefore you cannot use `echo` directly in here.
 You can find an example in index.php. However, this is deactivated, as it only works from PHP 7.4.
 
 ```php
