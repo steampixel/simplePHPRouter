@@ -29,6 +29,7 @@ function navi() {
       <li><a href="'.BASEPATH.'phpinfo">PHP Info</a></li>
       <li><a href="'.BASEPATH.'äöü">Non english route: german</a></li>
       <li><a href="'.BASEPATH.'الرقص-العربي">Non english route: arabic</a></li>
+      <li><a href="'.BASEPATH.'arrow/test123">Arrow function test (please enable this route first)</a></li>
       <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter">aTrailingSlashDoesNotMatter</a></li>
       <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter/">aTrailingSlashDoesNotMatter/</a></li>
       <li><a href="'.BASEPATH.'theCaseDoesNotMatter">theCaseDoesNotMatter</a></li>
@@ -143,7 +144,8 @@ Route::add('/return', function() {
 
 // Arrow function example
 // Note: You can use this example only if you are on PHP 7.4 or higher
-// Route::add('/arrow/([a-z-0-9-]*)', fn($foo) => 'This is a working arrow function example. Parameter: '.$foo );
+// $bar = 'bar';
+// Route::add('/arrow/([a-z-0-9-]*)', fn($foo) => navi().'This is a working arrow function example. <br/> Parameter: '.$foo. ' <br/> Variable from global scope: '.$bar );
 
 // Trailing slash example
 Route::add('/aTrailingSlashDoesNotMatter', function() {

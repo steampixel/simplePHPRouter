@@ -57,6 +57,25 @@ Route::run('/api/v1');
 
 Do not forget to edit the basepath in .htaccess too if you are on Apache2.
 
+## Use return instead of echo
+You don't have to use `echo` to output your content. You can also use the `return` statement. Everything that gets returned is echoed automatically.
+
+```php
+// Add your first route
+Route::add('/', function() {
+  return 'Welcome :-)';
+});
+```
+
+## Use arrow functions
+Since PHP 7.4 you can also use arrow functions to output your content. So you can easily use variables from outside and you can write shorter code.
+Please be aware that an Arrow function must always return a value. Therefore you cannot use `echo` here.
+You can find an example in index.php. However, this is deactivated, as it only works from PHP 7.4.
+
+```php
+Route::add('/arrow/([a-z-0-9-]*)', fn($foo) => 'This is a working arrow function example. Parameter: '.$foo );
+```
+
 ## Enable case sensitive routes, trailing slashes and multi match mode
 The second, third and fourth parameters of `Route::run('/', false, false, false);` are set to false by default.
 Using this parameters you can switch on and off several options:
