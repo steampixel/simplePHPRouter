@@ -30,6 +30,7 @@ function navi() {
       <li><a href="'.BASEPATH.'äöü">Non english route: german</a></li>
       <li><a href="'.BASEPATH.'الرقص-العربي">Non english route: arabic</a></li>
       <li><a href="'.BASEPATH.'global/test123">Inject variables to local scope</a></li>
+      <li><a href="'.BASEPATH.'return">Return instead of echo test</a></li>
       <li><a href="'.BASEPATH.'arrow/test123">Arrow function test (please enable this route first)</a></li>
       <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter">aTrailingSlashDoesNotMatter</a></li>
       <li><a href="'.BASEPATH.'aTrailingSlashDoesNotMatter/">aTrailingSlashDoesNotMatter/</a></li>
