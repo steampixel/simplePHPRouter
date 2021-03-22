@@ -209,7 +209,7 @@ Route::add('/known-routes', function() {
   $routes = Route::getAll();
   echo '<ul>';
   foreach($routes as $route) {
-    echo '<li>'.$route['expression'].'</li>';
+    echo '<li>'.$route['expression'].' ('.$route['method'].')</li>';
   }
   echo '</ul>';
 });

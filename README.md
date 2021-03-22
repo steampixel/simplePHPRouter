@@ -76,6 +76,18 @@ You can find an example in index.php. However, this is deactivated, as it only w
 Route::add('/arrow/([a-z-0-9-]*)', fn($foo) => 'This is a working arrow function example. Parameter: '.$foo );
 ```
 
+## Return all known routes
+This is useful, for example, to automatically generate test routes or help pages.
+
+```php
+$routes = Route::getAll();
+foreach($routes as $route) {
+  echo $route['expression'].' ('.$route['method'].')';
+}
+```
+
+On top of that you could use a library like https://github.com/hoaproject/Regex to generate working example links for the different expressions.
+
 ## Enable case sensitive routes, trailing slashes and multi match mode
 The second, third and fourth parameters of `Route::run('/', false, false, false);` are set to false by default.
 Using this parameters you can switch on and off several options:
