@@ -98,7 +98,7 @@ Using this parameters you can switch on and off several options:
 ## Something does not work?
 * Don't forget to set the correct basepath as the first argument in your `run()` method and in your .htaccess file.
 * Enable mod_rewrite in your Apache2 settings, in case you're using Apache2: `a2enmod apache2`
-* Does Apache even load the .htaccess file? Check whether the `AllowOverride All` option is set in the Apache configuration like in this example:
+* Does Apache2 even load the .htaccess file? Check whether the `AllowOverride All` option is set in the Apache2 configuration like in this example:
 ```
 <VirtualHost *:80>
     ServerName mysite.com
