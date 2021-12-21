@@ -98,6 +98,16 @@ Using this parameters you can switch on and off several options:
 ## Something does not work?
 * Don't forget to set the correct basepath as the first argument in your `run()` method and in your .htaccess file.
 * Enable mod_rewrite in your Apache2 settings, in case you're using Apache2: `a2enmod apache2`
+* Does Apache even load the .htaccess file? Check whether the `AllowOverride All` option is set in the Apache configuration like in this example:
+```
+<VirtualHost *:80>
+    ServerName mysite.com
+    DocumentRoot /var/www/html/mysite.com
+    <Directory "/var/www/html/mysite.com">
+        AllowOverride All
+    </Directory>
+</VirtualHost>
+```
 
 ## What skills do you need?
 Please be aware that for this router you need a basic understanding of PHP. Many problems stem from people lacking basic programming knowledge. You should therefore have the following skills:
