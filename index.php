@@ -13,8 +13,14 @@ define('BASEPATH','/');
 // Do not forget to edit the basepath in .htaccess if you are on apache
 // define('BASEPATH','/api/v1');
 
+// Lets define some slugs for automatic route and navigation generation
+// See examples below
+$slugs = ['article-1' => 'Article 1', 'article-2' => 'Article 2', 'article-3' => 'Article 3', 'article-4' => 'Article 4', 'article-5' => 'Article 5'];
+
+// This function just renders a simple navigation
 function navi() {
-  echo '
+  global $slugs;
+  $navi = '
   Navigation:
   <ul>
       <li><a href="'.BASEPATH.'">home</a></li>
@@ -38,9 +44,15 @@ function navi() {
       <li><a href="'.BASEPATH.'thecasedoesnotmatter">thecasedoesnotmatter</a></li>
       <li><a href="'.BASEPATH.'this-route-is-not-defined">404 Test</a></li>
       <li><a href="'.BASEPATH.'this-route-is-defined">405 Test</a></li>
-      <li><a href="'.BASEPATH.'known-routes">known routes</a></li>
-  </ul>
-  ';
+      <li><a href="'.BASEPATH.'known-routes">known routes</a></li>';
+
+      // Auto generate some entrys
+      foreach($slugs as $slug => $entry) {
+        $navi.= '<li><a href="'.BASEPATH.'my-blog-articles/'.$slug.'">'.$entry.' (auto generated)</a></li>';
+      }
+
+  $navi.= '</ul>';
+  echo $navi;
 }
 
 // Add base route (startpage)
@@ -137,6 +149,15 @@ Route::add('/الرقص-العربي', function() {
   navi();
   echo 'Arabic example. Non english letters should work too <br>';
 });
+
+// Auto generate dynamic routes from a database or from another source
+// For this example we will just use a predefined array
+foreach($slugs as $slug => $entry) {
+  Route::add('/my-blog-articles/'.$slug, function() use($entry) {
+    navi();
+      echo 'You are here: '.$entry;
+  });
+}
 
 // Use variables from global scope
 // You can use for example use() to inject variables to local scope
