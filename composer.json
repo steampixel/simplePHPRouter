@@ -1,11 +1,11 @@
 {
     "name": "steampixel/simple-php-router",
-    "description": "This is a simple and small PHP router that can handel the whole url routing for your project.",
+    "description": "This is a simple and small PHP router that can handle the whole url routing for your project.",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Christoph Stitz",
+            "name": "Steampixel",
             "email": "info@steampixel.de",
             "homepage": "https://steampixel.de/"
         },
