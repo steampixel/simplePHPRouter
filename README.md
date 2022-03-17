@@ -109,6 +109,9 @@ Using this parameters you can switch on and off several options:
 </VirtualHost>
 ```
 
+## Pages, Templates, Themes, Components
+This is a simple router. So there is no templating at all. But it works perfectly together with [simplePHPComponents](https://github.com/steampixel/simplePHPComponents) and [simplePHPPortals](https://github.com/steampixel/simplePHPPortals). There is a complete boilerplate project including these dependencies and this router called [simplePHPPages](https://github.com/steampixel/simplePHPPages). You can use it for you next project.
+
 ## What skills do you need?
 Please be aware that for this router you need a basic understanding of PHP. Many problems stem from people lacking basic programming knowledge. You should therefore have the following skills:
 * Basic PHP Knowledge
