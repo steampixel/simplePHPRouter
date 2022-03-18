@@ -74,6 +74,8 @@ Route::add('/test.html', function() {
 });
 
 // This example shows how to include files and how to push data to them
+// Hint: If you want to use this router for building websites with different nice looking HTML pages please visit https://github.com/steampixel/simplePHPPages
+// There you will find a complete website example that bases on this router including themes, pages, layouts and content blocks.
 Route::add('/blog/([a-z-0-9-]*)', function($slug) {
   navi();
   include('include-example.php');
