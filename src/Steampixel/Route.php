@@ -34,6 +34,19 @@ class Route {
   public static function methodNotAllowed($function) {
     self::$methodNotAllowed = $function;
   }
+  
+  public static function redirect(){
+    if(func_num_args() == 1){
+      $url = func_get_arg(0);
+      header('Location: '.$url);
+    }else {
+      $url  = func_get_arg(func_num_args() - 1);
+      $path = array_slice(func_get_args(), 0, func_num_args() - 1);
+      if(in_array($_SERVER['REQUEST_URI'], $path)){
+        header('Location: '.$url);
+      }
+    }
+  }
 
   public static function run($basepath = '', $case_matters = false, $trailing_slash_matters = false, $multimatch = false) {
 
