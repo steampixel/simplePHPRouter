@@ -237,6 +237,22 @@ Route::add('/known-routes', function() {
   echo '</ul>';
 });
 
+//redirect a route from the view
+Route::add('/in-redirect', function() {
+  Route::redirect('/out-redirect');
+});
+
+//new redirection route
+Route::add('/out-redirect', function() {
+  echo 'redirection root';
+});
+
+//redirect route1 to new
+Route::redirect('route1', '/out-redirect');
+
+//redirect multiple urls to to login
+Route::redirect('/route1', '/route2', '/route3', '/out-redirect');
+
 // Run the Router with the given Basepath
 Route::run(BASEPATH);
 
