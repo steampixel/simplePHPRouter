@@ -1,4 +1,4 @@
-# Simple PHP Router
+# Simple PHP Router ⇄
 
 Hey! This is a simple and small single class PHP router that can handle the whole URL routing for your project.
 It utilizes RegExp and PHP's anonymous functions to create a lightweight and fast routing system.
