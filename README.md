@@ -126,7 +126,7 @@ Please note that we are happy to help you if you have problems with this router.
 ## 🚢 Test setup with Docker
 I have created a little Docker test setup.
 
-1. Build the image: `docker build -t simplephprouter docker/image-php-7.2`
+1. Build the image: `docker build -t simplephprouter docker/image-php-8.5`
 
 2. Spin up a container
 	* On Linux / Mac or Windows Powershell use: `docker run -d -p 80:80 -v $(pwd):/var/www/html --name simplephprouter simplephprouter`
